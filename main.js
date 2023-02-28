@@ -78,12 +78,15 @@ const round = (desetinneCislo) => {
     if (desetinneCislo.slice(-1) < 5) {
         return (Math.trunc(desetinneCislo))
     } else if (desetinneCislo.slice(-1) > 5) {
+        return (Math.trunc(desetinneCislo) + 1)            //Math.ceil
+    } else if ((desetinneCislo.slice(-3, -2) % 2) === 0) {
+        return (Math.trunc(desetinneCislo))
+    } else 
         return (Math.trunc(desetinneCislo) + 1)
     }
-        
-    }
 
 
+//console.log(desetinneCislo.slice(-3, -2))
 //console.log(Math.trunc(Number(desetinneCislo)))
 //console.log(desetinneCislo.slice(-1))
 console.log(round(desetinneCislo))

@@ -1,1 +1,1 @@
-# czechitas-lesson3
+# czechitas-lesson6
