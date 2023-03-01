@@ -10,7 +10,7 @@ vrátí objekt s jednotlivýnu částmi zadaného data. Příklad použití:
 { day: 6, month: 4, year: 2021 }*/
 
 
-/*const enterDate = prompt('Zadej libovolné datum ve formátu den.měsíc.rok: ')
+const enterDate = prompt('Zadej libovolné datum ve formátu den.měsíc.rok: ')
 
 const parseDate = (enterDate) => {
     return {
@@ -19,7 +19,7 @@ const parseDate = (enterDate) => {
         year: enterDate.slice(-4)
     }
 }
-console.log(parseDate(enterDate))*/
+console.log(parseDate(enterDate))
 
 /*Cvičení 2
 Bez použití knihovny dayjs napište funkci formatDate, která na vstupu obdrží objekt představující datum v následujícím formátu.
@@ -31,9 +31,9 @@ Funkce vrátí řetězec představující datum ve formátu DD.MM.YYYY. Příkla
 "06.04.2021"
 V tomto cvičení se vám jistě bude hodit metoda padStart. Zkuste také uvnitř těla funkce použít destrukturování.*/
 
-/*const enterDay = prompt('Zadej libovolny den v mesici: ')
-const enterMonth = prompt('Zadej libovolny mesic v roce: ')
-const enterYear = prompt('Zadej libovolny rok: ')
+const enterDay = prompt('Zadej libovolný den v měsíci: ')
+const enterMonth = prompt('Zadej libovolný měsíc v roce: ')
+const enterYear = prompt('Zadej libovolný rok: ')
 
 const date = {
     day: enterDay,
@@ -51,7 +51,7 @@ const formatDate = (date) => {
       `
 }
 
-console.log(formatDate(date))*/
+console.log(formatDate(date))
 
 /*Cvičení 3
 Jak jistě znalci jazyka Python dobře vědí, funkce round v tomto jazyce zaokrouhluje malinko jinak, než jsme zvyklí. 
@@ -71,25 +71,28 @@ Zajistěte, aby funkce správně fungovala i pro záporná čísla.
 
 Tedy například -3.5 se zaokrouhlí na -4, naopak -2.5 se zaokrouhlí na -2.*/
 
-const desetinneCislo = prompt('Zadej cislo s jednim desetinnym mistem, misto carky pouzij tecku: ')
+const desetinneCislo = prompt('Zadej číslo s jedním desetinným místem, místo čárky použij tečku: ')
 //console.log(desetinneCislo)
 
 const round = (desetinneCislo) => {
     if (desetinneCislo.slice(-1) < 5) {
-        return (Math.trunc(desetinneCislo))
+        return (Math.floor(desetinneCislo))            //Math.trunc(desetinneCislo)
     } else if (desetinneCislo.slice(-1) > 5) {
-        return (Math.trunc(desetinneCislo) + 1)            //Math.ceil
+        return (Math.ceil(desetinneCislo))            //Math.trunc(desetinneCislo) + 1
     } else if ((desetinneCislo.slice(-3, -2) % 2) === 0) {
         return (Math.trunc(desetinneCislo))
-    } else 
-        return (Math.trunc(desetinneCislo) + 1)
+    } else if (desetinneCislo.indexOf('-') !== -1) {
+        return (Math.trunc(desetinneCislo) - 1)
+    } else {
+        return (Math.ceil(desetinneCislo))
     }
-
+}
 
 //console.log(desetinneCislo.slice(-3, -2))
 //console.log(Math.trunc(Number(desetinneCislo)))
 //console.log(desetinneCislo.slice(-1))
 console.log(round(desetinneCislo))
+
 
 
 
