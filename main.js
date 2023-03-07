@@ -10,7 +10,7 @@ vrátí objekt s jednotlivýnu částmi zadaného data. Příklad použití:
 { day: 6, month: 4, year: 2021 }*/
 
 
-const enterDate = prompt('Zadej libovolné datum ve formátu den.měsíc.rok: ')
+/*const enterDate = prompt('Zadej libovolné datum ve formátu den.měsíc.rok: ')
 
 const parseDate = (enterDate) => {
     return {
@@ -19,7 +19,7 @@ const parseDate = (enterDate) => {
         year: enterDate.slice(-4)
     }
 }
-console.log(parseDate(enterDate))
+console.log(parseDate(enterDate))*/
 
 /*Cvičení 2
 Bez použití knihovny dayjs napište funkci formatDate, která na vstupu obdrží objekt představující datum v následujícím formátu.
@@ -31,7 +31,7 @@ Funkce vrátí řetězec představující datum ve formátu DD.MM.YYYY. Příkla
 "06.04.2021"
 V tomto cvičení se vám jistě bude hodit metoda padStart. Zkuste také uvnitř těla funkce použít destrukturování.*/
 
-const enterDay = prompt('Zadej libovolný den v měsíci: ')
+/*const enterDay = prompt('Zadej libovolný den v měsíci: ')
 const enterMonth = prompt('Zadej libovolný měsíc v roce: ')
 const enterYear = prompt('Zadej libovolný rok: ')
 
@@ -47,11 +47,11 @@ const { day, month, year } = date
 
 const formatDate = (date) => {
     return `
-    ${day.padStart(2,0)}.${month.padStart(2,0)}.${year.padStart(2,0)}
+    ${day.padStart(2,0)}.${month.padStart(2,0)}.${year.padStart(4,'??')}
       `
 }
 
-console.log(formatDate(date))
+console.log(formatDate(date))*/
 
 /*Cvičení 3
 Jak jistě znalci jazyka Python dobře vědí, funkce round v tomto jazyce zaokrouhluje malinko jinak, než jsme zvyklí. 
@@ -71,8 +71,11 @@ Zajistěte, aby funkce správně fungovala i pro záporná čísla.
 
 Tedy například -3.5 se zaokrouhlí na -4, naopak -2.5 se zaokrouhlí na -2.*/
 
-const desetinneCislo = prompt('Zadej číslo s jedním desetinným místem, místo čárky použij tečku: ')
+//const desetinneCislo = prompt('Zadej číslo s jedním desetinným místem, místo čárky použij tečku: ')
 //console.log(desetinneCislo)
+const desetinneCislo = document.querySelector('.desetinneCislo')
+desetinneCislo.onselect = function(){desetinneCislo}
+const vysledek = document.querySelector('.vysledek')
 
 const round = (desetinneCislo) => {
     if (desetinneCislo.slice(-1) < 5) {
@@ -92,6 +95,8 @@ const round = (desetinneCislo) => {
 //console.log(Math.trunc(Number(desetinneCislo)))
 //console.log(desetinneCislo.slice(-1))
 console.log(round(desetinneCislo))
+
+vysledek.onselect = round()
 
 
 
